@@ -1,0 +1,49 @@
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "username": "SaMaNDaR200",
+    "password": "Password",
+    "fullName": "Samandar Rajabboyev"   
+}
+
+####
+
+POST http://localhost:3000/signin
+Content-Type: application/json
+
+{
+    "username": "SaMaNDaR300",
+    "password": "Password"
+}
+
+####
+
+POST http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhTWFORGFSMzAwIiwiaWF0IjoxNjY0OTg5MzA0fQ.HgFIOOL6j5SKWq9Y6R5_fquI6QNL89qhckeNXwZ6PnQ
+Content-Type: application/json
+
+{
+    "title": "Todo title 1",
+    "description": "Todo description 1" 
+}
+
+####
+
+GET http://localhost:3000/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhTWFORGFSMzAwIiwiaWF0IjoxNjY0OTg5MzA0fQ.HgFIOOL6j5SKWq9Y6R5_fquI6QNL89qhckeNXwZ6PnQ
+
+####
+
+GET http://localhost:3000/todos/23
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhTWFORGFSMzAwIiwiaWF0IjoxNjY0OTg5MzA0fQ.HgFIOOL6j5SKWq9Y6R5_fquI6QNL89qhckeNXwZ6PnQ
+
+####
+
+GET http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhTWFORGFSMzAwIiwiaWF0IjoxNjY0OTg5MzA0fQ.HgFIOOL6j5SKWq9Y6R5_fquI6QNL89qhckeNXwZ6PnQ
+
+####
+
+DELETE http://localhost:3000/todos/23
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhTWFORGFSMzAwIiwiaWF0IjoxNjY0OTg5MzA0fQ.HgFIOOL6j5SKWq9Y6R5_fquI6QNL89qhckeNXwZ6PnQ
