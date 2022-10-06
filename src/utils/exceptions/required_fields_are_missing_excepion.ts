@@ -1,11 +1,11 @@
 import { IAppException } from "./iapp_exception";
 
 export class RequiredFieldsAreMissingException extends IAppException {
-  constructor(message?: any) {
+  constructor(message?: any, fields?: any) {
     super(
       message || {
         message: "all fields are required!",
-        fields: message,
+        fields: fields || [],
       },
       400
     );

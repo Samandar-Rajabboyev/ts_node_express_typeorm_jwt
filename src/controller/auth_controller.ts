@@ -16,8 +16,8 @@ export class AuthController {
   async signUp(request: Request, response: Response, next: NextFunction) {
     try {
       const { username, password, fullName } = request.body;
-      if (!username || !password || fullName)
-        throw new RequiredFieldsAreMissingException([
+      if (!username || !password || !fullName)
+        throw new RequiredFieldsAreMissingException(null, [
           "username",
           "password",
           "fullName",
@@ -26,7 +26,8 @@ export class AuthController {
       const user = await this.userController.save(request, response, next);
 
       const token = generateToken(username);
-      return { token: token, ...user };
+      delete user.password;
+      return { ...user, token: token };
     } catch (err) {
       return exceptionHandler(err, response);
     }
@@ -36,7 +37,10 @@ export class AuthController {
     try {
       const { username, password } = request.body;
       if (!username || !password)
-        throw new RequiredFieldsAreMissingException(["username", "password"]);
+        throw new RequiredFieldsAreMissingException(null, [
+          "username",
+          "password",
+        ]);
 
       const user = await this.userService.findUserViaUsername(username);
       if (!user) throw new UserNotFoundException();
@@ -45,6 +49,7 @@ export class AuthController {
       if (!isPwdCorrect) throw new PasswordIncorrectException();
 
       const token = generateToken(username);
+      delete user.password;
       return { ...user, token };
     } catch (err: any) {
       return exceptionHandler(err, response);

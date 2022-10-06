@@ -28,7 +28,10 @@ export class TodoController {
     try {
       const { id } = request.params;
 
-      if (!id) throw new RequiredFieldsAreMissingException(["id"]);
+      if (!id)
+        throw new RequiredFieldsAreMissingException({
+          message: { message: ["id"] },
+        });
 
       const user = await checkTokenAndGetUser(request.headers.authorization);
 
@@ -49,7 +52,11 @@ export class TodoController {
       const { title, description } = request.body;
 
       if (!title || !description)
-        throw new RequiredFieldsAreMissingException(["title", "desciption"]);
+        throw new RequiredFieldsAreMissingException({
+          message: {
+            message: ["title", "desciption"],
+          },
+        });
 
       const user = await checkTokenAndGetUser(request.headers.authorization);
 
@@ -63,7 +70,10 @@ export class TodoController {
   async remove(request: Request, response: Response, next: NextFunction) {
     try {
       const { id } = request.params;
-      if (!id) throw new RequiredFieldsAreMissingException(["id"]);
+      if (!id)
+        throw new RequiredFieldsAreMissingException({
+          message: { message: ["id"] },
+        });
 
       const user = await checkTokenAndGetUser(request.headers.authorization);
 

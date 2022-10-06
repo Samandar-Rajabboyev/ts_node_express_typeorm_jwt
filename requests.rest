@@ -2,9 +2,9 @@ POST http://localhost:3000/signup
 Content-Type: application/json
 
 {
-    "username": "SaMaNDaR200",
-    "password": "Password",
-    "fullName": "Samandar Rajabboyev"   
+    "username": "Abdulaziz",
+    "password": "Kit",
+    "fullName": "Abdulaziz"   
 }
 
 ####
@@ -13,14 +13,14 @@ POST http://localhost:3000/signin
 Content-Type: application/json
 
 {
-    "username": "SaMaNDaR300",
-    "password": "Password"
+    "username": "Abdulaziz",
+    "password": "Kit"
 }
 
 ####
 
 POST http://localhost:3000/todos
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhTWFORGFSMzAwIiwiaWF0IjoxNjY0OTg5MzA0fQ.HgFIOOL6j5SKWq9Y6R5_fquI6QNL89qhckeNXwZ6PnQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFiZHVsYXppeiIsImlhdCI6MTY2NTAzNjAzMX0.UcbcBiEZFQ7h281BJFNabDZSNVJBVLMJcvSUo10dFP4
 Content-Type: application/json
 
 {
@@ -41,9 +41,9 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhTWFORGFS
 ####
 
 GET http://localhost:3000/todos
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhTWFORGFSMzAwIiwiaWF0IjoxNjY0OTg5MzA0fQ.HgFIOOL6j5SKWq9Y6R5_fquI6QNL89qhckeNXwZ6PnQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFiZHVsYXppeiIsImlhdCI6MTY2NTAzNjAzMX0.UcbcBiEZFQ7h281BJFNabDZSNVJBVLMJcvSUo10dFP4
 
 ####
 
-DELETE http://localhost:3000/todos/23
+DELETE http://localhost:3000/todos/25
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhTWFORGFSMzAwIiwiaWF0IjoxNjY0OTg5MzA0fQ.HgFIOOL6j5SKWq9Y6R5_fquI6QNL89qhckeNXwZ6PnQ
