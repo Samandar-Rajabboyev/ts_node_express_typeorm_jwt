@@ -3,6 +3,7 @@ import { UserService } from "../services/user_service";
 import { IAppException } from "../utils/exceptions/iapp_exception";
 import { PasswordIncorrectException } from "../utils/exceptions/password_incorrect_exception";
 import { RequiredFieldsAreMissingException } from "../utils/exceptions/required_fields_are_missing_excepion";
+import { UserAlreadyExistException } from "../utils/exceptions/user_already_exist_exception";
 import { UserNotFoundException } from "../utils/exceptions/user_not_found_exception";
 import { exceptionHandler } from "../utils/helper/exception_handler";
 import { checkPwd } from "../utils/helper/password_hash";
@@ -22,6 +23,9 @@ export class AuthController {
           "password",
           "fullName",
         ]);
+
+      const existUser = await this.userService.findUserViaUsername(username);
+      if (existUser) throw new UserAlreadyExistException();
 
       const user = await this.userController.save(request, response, next);
 
